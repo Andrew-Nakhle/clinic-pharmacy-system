@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Section extends Model
+{
+    protected $table = 'name';
+    public function secretary(){
+        return $this->hasOne(SecretaryProfile::class);
+    }
+    public function doctors()
+    {
+        return $this->hasMany(DoctorProfile::class);
+    }
+}

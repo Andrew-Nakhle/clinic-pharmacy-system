@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Doctor;
+use App\Models\DoctorProfile;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -37,7 +37,7 @@ class registerDoORSe extends Controller
             'role' => $validated['role'],
         ]);
         $user->assignRole($validated['role']);
-        if($validated['role'] === 'Doctor'){
+        if($validated['role'] === 'DoctorProfile'){
             $user->Doctor()->create([
 
             ]);

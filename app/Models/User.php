@@ -33,15 +33,15 @@ class User extends Authenticatable
         'role',
     ];
     public function doctor(){
-        return $this->hasOne(Doctor::class);
+        return $this->hasOne(DoctorProfile::class);
     }
      public function secretary()
      {
-         return $this->hasOne(Secretary::class);
+         return $this->hasOne(SecretaryProfile::class);
      }
      public function patient()
      {
-         return $this->hasOne(Patient::class);
+         return $this->hasOne(PatientProfile::class);
      }
 
     /**

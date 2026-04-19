@@ -11,13 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('doctors', function (Blueprint $table) {
+        Schema::create('doctor_profiles', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('section_id')->nullable()->constrained()->onDelete('set null');
+            $table->string('profile_image');
             $table->string('specialization');
             $table->string('qualification');
             $table->integer('experience_years');
-            $table->text('bio');
+            $table->string('certification');//enter when the doctor want to update his profile
+            $table->text('bio');//enter when the doctor want to update his profile
             $table->timestamps();
         });
     }

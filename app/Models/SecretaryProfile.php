@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Secretary extends Model
+class SecretaryProfile extends Model
 {
     protected $table= 'secretaries';
     protected $fillable= ['user_id','app'];
@@ -12,4 +12,6 @@ class Secretary extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function section(){
+return $this->belongsTo(Section::class);    }
 }

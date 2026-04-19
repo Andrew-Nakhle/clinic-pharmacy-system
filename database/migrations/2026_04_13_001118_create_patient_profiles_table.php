@@ -11,10 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('secretaries', function (Blueprint $table) {
+        Schema::create('patients_profiles', function (Blueprint $table) {
+
             $table->id();
-            $table->string('app');
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('profile_image')->nullable();
+            $table->string('id_card');
+            $table->string('blood_group');
+            $table->integer('tall');
+            $table->smallInteger('weight');
             $table->timestamps();
         });
     }
@@ -24,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('secretaries');
+        Schema::dropIfExists('patients');
     }
 };
