@@ -28,9 +28,9 @@ class StoreSecretaryRequest extends FormRequest
             'phone'=>['required','string','regex:/^[0-9]{10}$/'],
             'email' => ['required', 'string', 'email','unique:doctors'],
             'password' => ['required', 'string','confirmed'],
-            'gender' => ['required', 'string'],
+            'gender'=>['required','string','in:male,female,other'],
             'section' => ['required', 'string'],
-
+            'birth_date'=>['required','date'],
         ];
     }
 }

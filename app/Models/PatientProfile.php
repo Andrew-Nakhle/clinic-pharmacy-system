@@ -8,12 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class PatientProfile extends Model
 {
    use HasFactory;
-   protected $table = 'patients';
+   protected $table = 'patient_profiles';
    protected $fillable = [
        'user_id',
        'blood_group',
        'weight',
        'tall',
+       'id_card',
+       'profile_image',
    ];
    public function user()
    {

@@ -16,11 +16,13 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('phone')->unique();
-            $table->string('email')->unique();
+            $table->string('email')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('gender');
+            $table->date('birth_date');
             $table->enum('role', ['doctor', 'patient', 'secretary','admin'])->default('patient');
+            $table->enum('status', ['active', 'inactive','delete'])->default('active');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -27,12 +27,13 @@ class RegisterPatientRequest extends FormRequest
             'last_name' => ['required', 'string', 'max:255','min:2'],
             'phone'=>['required','string','regex:/^[0-9]{10}$/'],
             'password' => ['required', 'string','confirmed'],
-            'gender'=>['required','string'],
-            'profile_image'=>['required','image'],
+            'gender'=>['required','string','in:male,female,other'],
+            'profile_image'=>['image','nullable'],
             'id_card'=>['required','image'],
             'blood_group'=>['required','string'],
             'tall'=>['required','string'],
             'weight'=>['required','string'],
+            'birth_date'=>['required','date'],
 
 
 

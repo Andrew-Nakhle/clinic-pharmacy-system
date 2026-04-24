@@ -17,10 +17,10 @@ return new class extends Migration
             $table->foreignId('section_id')->nullable()->constrained()->onDelete('set null');
             $table->string('profile_image');
             $table->string('specialization');
-            $table->string('qualification');
-            $table->integer('experience_years');
-            $table->string('certification');//enter when the doctor want to update his profile
-            $table->text('bio');//enter when the doctor want to update his profile
+//            $table->string('qualification');
+            $table->integer('experience_years')->nullable();
+            $table->string('certification')->nullable();//enter when the doctor want to update his profile
+            $table->text('bio')->nullable();//enter when the doctor want to update his profile
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('doctors');
+        Schema::dropIfExists('doctor_profiles');
     }
 };

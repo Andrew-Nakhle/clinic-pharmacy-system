@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class SecretaryProfile extends Model
 {
-    protected $table= 'secretaries';
-    protected $fillable= ['user_id','app'];
+    protected $table= 'secretary_profiles';
+    protected $fillable= ['user_id','section'];
     public function user()
     {
         return $this->belongsTo(User::class);

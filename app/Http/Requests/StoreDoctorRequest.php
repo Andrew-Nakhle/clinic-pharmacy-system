@@ -28,8 +28,9 @@ class StoreDoctorRequest extends FormRequest
             'phone'=>['required','string','regex:/^[0-9]{10}$/'],
             'email' => ['required', 'string', 'email','unique:doctors'],
             'password' => ['required', 'string','confirmed'],
-            'gender' => ['required', 'string'],
+            'gender'=>['required','string','in:male,female,other'],
             'profile_image'=>['required','image'],
+            'birth_date'=>['required','date'],
 //            'certification'=>['required','image'],
 //            'experience_years'=>['required','integer'],
 

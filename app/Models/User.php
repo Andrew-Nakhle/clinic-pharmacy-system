@@ -23,14 +23,12 @@ class User extends Authenticatable
     protected $fillable = [
         'first_name',
         'last_name',
-        'blood_group',
         'phone',
         'email',
         'password',
         'gender',
-        'tall',
-        'weight',
         'role',
+        'birth_date',
     ];
     public function doctor(){
         return $this->hasOne(DoctorProfile::class);

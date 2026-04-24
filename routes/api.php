@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\registerPatient;
@@ -13,3 +14,11 @@ Route::post('registerPatient',[registerPatient::class,'register']);
 Route::post('login',[loginController::class,'login']);
 Route::post('registerDoORSe', [registerDoORSe::class, 'register'])
     ->middleware(['auth:sanctum', 'permission:add_DoctorORSecretary']);
+
+Route::group(['prefix'=>'auth'],function(){
+    Route::post('login',[AuthController::class,'login']);
+    Route::post('register',[AuthController::class,'registerPatient']);
+    Route::post('logout',[AuthController::class,'logout'])->middleware('auth:sanctum');
+});
+
+
